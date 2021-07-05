@@ -4,7 +4,7 @@
 
 using namespace std;
 
-cclass Message {
+class Message {
 public: 
     Message() {}
     Message(const string& text, int id) : text_(text), id_(id) {}
