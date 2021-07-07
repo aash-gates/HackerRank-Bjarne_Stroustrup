@@ -19,3 +19,4 @@ int main()
     cout << st.age << " " << st.first_name << " " << st.last_name << " " << st.standard;
     
     return 0;
+}
