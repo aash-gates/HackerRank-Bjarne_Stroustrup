@@ -4,16 +4,30 @@
 #include <iostream>
 #include <algorithm>
 using namespace std;
-//Overload operators + and << for the class complex
-//+ should add two complex numbers as (a+ib) + (c+id) = (a+c) + i(b+d)
-//<< should print a complex number in the format "a+ib"
-ostream& operator<<(ostream& os, const Complex& c) {
-    return os << c.a << (c.b > 0 ? '+' : '-') << 'i' << c.b;
-}
+/* Operator Overloading in C++ - Hacker Rank Solution START */
 
-Complex operator+(const Complex& a, const Complex& b) { 
-    return { a.a + b.a, a.b + b.b };
-}
+class Matrix 
+{
+    public:
+        vector<vector<int>> a;
+
+        Matrix() {}
+        Matrix operator+(const Matrix &o) 
+        {
+            Matrix sum(*this);
+            for (size_t i = 0; i < sum.a.size(); i++) 
+            {
+                for (size_t j = 0; j < sum.a[i].size(); j++) 
+                {
+                    sum.a[i][j] += o.a[i][j];
+                }
+            }
+            return sum;
+        }
+};
+
+/* Operator Overloading in C++ - Hacker Rank Solution END */
+
 int main () {
    int cases,k;
    cin >> cases;
